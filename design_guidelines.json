@@ -1,0 +1,190 @@
+{
+  "project_name": "CrookSec - Next Gen Cybersecurity",
+  "theme_strategy": "dark_mode_only",
+  "emotional_tone": "Authority, Mystery, Precision, Future-Proof",
+  "design_archetype": "Electric & Neon",
+  
+  "typography": {
+    "headings": {
+      "font_family": "Space Grotesk, sans-serif",
+      "weights": ["500", "700"],
+      "usage": "All section titles, hero text. Use tracking-tight (-0.02em) for large text."
+    },
+    "body": {
+      "font_family": "Inter, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Paragraphs, UI labels. Use relaxed line-height."
+    },
+    "mono": {
+      "font_family": "JetBrains Mono, monospace",
+      "weights": ["400"],
+      "usage": "Code snippets, data metrics, decorative numbers."
+    }
+  },
+
+  "colors": {
+    "background": {
+      "default": "#020617",
+      "surface": "#0F172A",
+      "overlay": "rgba(2, 6, 23, 0.8)"
+    },
+    "primary": {
+      "main": "#00F0FF",
+      "glow": "rgba(0, 240, 255, 0.5)",
+      "dim": "#009099"
+    },
+    "secondary": {
+      "main": "#7000FF",
+      "glow": "rgba(112, 0, 255, 0.5)"
+    },
+    "accent": {
+      "success": "#10B981",
+      "danger": "#EF4444",
+      "warning": "#F59E0B"
+    },
+    "neutral": {
+      "white": "#F8FAFC",
+      "grey_100": "#F1F5F9",
+      "grey_400": "#94A3B8",
+      "grey_800": "#1E293B",
+      "border": "rgba(148, 163, 184, 0.1)"
+    }
+  },
+
+  "visual_enhancers": {
+    "glassmorphism": {
+      "default": "backdrop-blur-xl bg-slate-950/40 border border-slate-800/60",
+      "heavy": "backdrop-blur-2xl bg-black/60 border border-white/10"
+    },
+    "glow_effects": {
+      "text_glow": "text-shadow: 0 0 20px rgba(0, 240, 255, 0.5)",
+      "box_glow": "box-shadow: 0 0 40px -10px rgba(112, 0, 255, 0.3)"
+    },
+    "gradients": {
+      "hero_bg": "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #020617 60%)",
+      "text_gradient": "bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500"
+    },
+    "borders": {
+      "tracing_beam": "Animated gradient border using mask-image or moving background position"
+    }
+  },
+
+  "layout_strategies": {
+    "spacing": {
+      "section_gap": "py-32",
+      "element_gap": "gap-8",
+      "container_padding": "px-6 md:px-12"
+    },
+    "grids": {
+      "bento_expert": "grid grid-cols-1 md:grid-cols-3 gap-6",
+      "feature_list": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8"
+    }
+  },
+
+  "components": {
+    "Hero": {
+      "type": "Immersive 3D",
+      "library": "React Three Fiber",
+      "description": "Full screen height. Background is a R3F scene with instanced particles (8000+) connected by lines, simulating a neural network or encrypted data stream. Foreground content: Large 'Space Grotesk' headline with text-glow, and two CTA buttons (one solid neon, one glass).",
+      "specs": "Particles must respond to mouse movement or have orbital flow."
+    },
+    "Navbar": {
+      "type": "Floating Glass",
+      "style": "Fixed top, detached from edges (floating pill shape), heavy glassmorphism. Logo on left, Links center, 'Get Audit' button right."
+    },
+    "ServiceCards": {
+      "type": "Holographic Cards",
+      "style": "Dark glass background. On hover: Border lights up (cyan/purple), card lifts (-y-2), internal icon glows. Use 'Tilt' effect if possible.",
+      "content": "Icon + Title + Short Description + 'Learn More' arrow."
+    },
+    "TechStack": {
+      "type": "Infinite Marquee or Floating Badges",
+      "style": "Two rows moving in opposite directions. Badges are pill-shaped, dark grey bg with neon borders."
+    },
+    "Portfolio": {
+      "type": "Parallax Grid",
+      "style": "Large project screenshots. Use 'ScrollTrigger' to reveal them with a staggering effect. Images should have a subtle 'glitch' effect on hover."
+    },
+    "ContactForm": {
+      "type": "Minimalist Terminal",
+      "style": "Input fields look like terminal command lines. Monospace font for inputs. Submit button says 'EXECUTE_TRANSMISSION'."
+    }
+  },
+
+  "image_urls": {
+    "hero_bg_fallback": {
+      "url": "https://images.unsplash.com/photo-1664526936810-ec0856d31b92",
+      "desc": "Abstract blue/purple data network visualization",
+      "credit": "Unsplash"
+    },
+    "about_section": {
+      "url": "https://images.unsplash.com/photo-1713464044292-e6798c8bb0e2",
+      "desc": "Futuristic team meeting in dark room",
+      "credit": "Unsplash"
+    },
+    "expertise_bg": {
+      "url": "https://images.unsplash.com/photo-1736196075570-1ca367e50927",
+      "desc": "Glass blocks abstract structure",
+      "credit": "Unsplash"
+    },
+    "office_vibe": {
+      "url": "https://images.unsplash.com/photo-1758520144667-3041caeff3c1",
+      "desc": "Man working late at desk, cyberpunk vibe",
+      "credit": "Unsplash"
+    },
+    "tech_abstract": {
+      "url": "https://images.unsplash.com/photo-1676911809746-85d90edbbe4a",
+      "desc": "Purple cubes hanging",
+      "credit": "Unsplash"
+    }
+  },
+
+  "assets_and_icons": {
+    "icon_library": "Lucide React",
+    "style": "Stroke width 1.5px. Color: Cyan or White.",
+    "custom_svgs": "Use simple geometric shapes (hexagons, circuits) as background decorations."
+  },
+
+  "motion_guidelines": {
+    "scrolling": "Use 'Lenis' for smooth momentum scrolling.",
+    "transitions": "All sections must fade-in and slide-up (y: 20 -> 0) on scroll.",
+    "micro_interactions": "Buttons: Scale 0.95 on click. Links: Underline expands from center. Cards: Glow intensity increases on hover.",
+    "3d_performance": "Use 'instancedMesh' for particles. Limit post-processing bloom on mobile."
+  },
+
+  "accessibility": {
+    "contrast": "Ensure neon text is not placed on light backgrounds. Use white text for main content.",
+    "reduced_motion": "Disable R3F particles and smooth scroll if 'prefers-reduced-motion' is true."
+  },
+  
+  "instructions_to_main_agent": [
+    "1. Install dependencies: 'framer-motion', 'three', '@react-three/fiber', '@react-three/drei', 'lucide-react', 'clsx', 'tailwind-merge', '@lenis/react'.",
+    "2. Setup 'Space Grotesk' and 'JetBrains Mono' fonts via Google Fonts import in index.css.",
+    "3. Create a 'components/3d/ParticleNetwork.jsx' using the R3F instancedMesh technique.",
+    "4. Build the 'Hero' section with the 3D component as a background layer (z-0) and content overlay (z-10).",
+    "5. Use Shadcn UI components for the Contact Form but heavily customize styles to match the 'Terminal' look (remove white backgrounds, use transparent borders).",
+    "6. Ensure all interactive elements have data-testid attributes."
+  ],
+
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: 'transition: all'. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add '.App { text-align: center; }' in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use 'sonner' for toasts",
+    "Sonner component are located in '/app/frontend/src/components/ui/sonner.jsx'"
+  ]
+}
