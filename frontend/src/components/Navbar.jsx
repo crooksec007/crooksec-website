@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Tech Stack', href: '#tech' },
   { label: 'Portfolio', href: '#portfolio' },
+  { label: 'AI Chat', href: '#chatbot' },
   { label: 'Contact', href: '#contact' },
 ];
 

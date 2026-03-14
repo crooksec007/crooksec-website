@@ -22,6 +22,8 @@ A modern, futuristic, high-end technology company website for CrookSec — a def
 - `Contact.jsx` — Terminal-style form, staggered field reveal (`fieldVariants` custom delay), `AnimatePresence` for success/error messages, social icons with `whileHover` lift
 - `Footer.jsx` — Brand, link columns, social links
 - `3d/ParticleNetwork.jsx` — Vanilla Three.js, 3000 instanced particles + connecting lines, orbital animation
+- `Chatbot.jsx` — NOVA AI assistant section (frontend-only mock responses), keyword-based engine, AnimatePresence for typing indicator, quick chips, 3D orb panel
+- `3d/AIOrb.jsx` — Vanilla Three.js: glowing inner sphere, dual wireframe icosahedrons, dual torus rings, 80 orbiting particles, mouse-reactive
 
 ### Backend Endpoints
 - `GET /api/` — Health check

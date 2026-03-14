@@ -6,6 +6,7 @@ import { Services } from "./components/Services";
 import { TechStack } from "./components/TechStack";
 import { WhyChoose } from "./components/WhyChoose";
 import { Portfolio } from "./components/Portfolio";
+import { Chatbot } from "./components/Chatbot";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
@@ -20,6 +21,7 @@ function App() {
         <TechStack />
         <WhyChoose />
         <Portfolio />
+        <Chatbot />
         <Contact />
       </main>
       <Footer />
