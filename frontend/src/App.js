@@ -9,6 +9,7 @@ import { Portfolio } from "./components/Portfolio";
 import { Chatbot } from "./components/Chatbot";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { FloatingChat } from "./components/FloatingChat";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingChat />
     </div>
   );
 }
