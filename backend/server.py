@@ -108,6 +108,15 @@ async def submit_contact(data: ContactCreate):
         subject=data.subject, message=data.message, created_at=created_at
     )
 
+@api_router.get("/contacts", response_model=List[ContactResponse])
+async def get_contacts():
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM contacts ORDER BY created_at DESC')
+    rows = cur.fetchall()
+    conn.close()
+    return [ContactResponse(**dict(row)) for row in rows]
+
 @api_router.get("/projects", response_model=List[ProjectResponse])
 async def get_projects():
     conn = get_db()
