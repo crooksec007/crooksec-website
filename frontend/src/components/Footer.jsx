@@ -26,15 +26,17 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #00F0FF 0%, #7000FF 100%)' }}
-              >
-                <Shield className="w-5 h-5 text-black" strokeWidth={2.5} />
+            <div className="flex items-center gap-3 mb-4 -ml-4">
+              <div className="w-24 h-24 flex items-center justify-center relative transition-transform duration-300 hover:scale-105">
+                <img 
+                  src="/logo.png" 
+                  alt="CrookSec Logo" 
+                  className="w-full h-full object-contain scale-[1.35]"
+                  style={{ filter: 'drop-shadow(0 0 12px rgba(0, 240, 255, 0.5)) brightness(1.1)' }}
+                />
               </div>
-              <span className="text-xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                Crook<span className="text-cyan-400">Sec</span>
+              <span className="font-bold text-4xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                CrookSec
               </span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">

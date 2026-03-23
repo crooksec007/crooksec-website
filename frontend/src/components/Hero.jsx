@@ -111,7 +111,7 @@ export const Hero = () => {
             className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10"
             data-testid="hero-tagline"
           >
-            AI-Powered Security & Next-Generation IT Solutions for enterprises that demand precision, resilience, and scalability.
+            We build and protect digital infrastructure like it's our own. AI-powered security and enterprise engineering—delivered by a team that genuinely cares about your success.
           </motion.p>
 
           {/* CTA Buttons */}

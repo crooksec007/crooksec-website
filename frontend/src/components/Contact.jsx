@@ -15,7 +15,8 @@ const socials = [
 const formFields = [
   { name: 'name', label: '$ name --required', placeholder: 'Your full name', type: 'text', testId: 'contact-name-input', required: true },
   { name: 'email', label: '$ email --required', placeholder: 'your@email.com', type: 'email', testId: 'contact-email-input', required: true },
-  { name: 'subject', label: '$ subject', placeholder: 'Security audit, AI integration, ...', type: 'text', testId: 'contact-subject-input', required: false },
+  { name: 'phone', label: '$ phone --required', placeholder: '+1 (555) 000-0000', type: 'tel', testId: 'contact-phone-input', required: true },
+  { name: 'subject', label: '$ subject --required', placeholder: 'Security audit, AI integration...', type: 'text', testId: 'contact-subject-input', required: true },
 ];
 
 const fieldVariants = {
@@ -24,26 +25,26 @@ const fieldVariants = {
 };
 
 export const Contact = () => {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [status, setStatus] = useState(null);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
+    if (!form.name || !form.email || !form.phone || !form.subject || !form.message) return;
     setStatus('sending');
     try {
       await axios.post(`${API}/contact`, form);
       setStatus('success');
-      setForm({ name: '', email: '', subject: '', message: '' });
+      setForm({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch {
       setStatus('error');
     }
   };
 
   const inputClass = `w-full bg-transparent border-b py-3 text-white text-sm mono placeholder-slate-600 outline-none`;
-  const inputStyle = { borderColor: 'rgba(0, 240, 255, 0.2)', fontFamily: 'JetBrains Mono, monospace' };
+  const inputStyle = { borderColor: 'rgba(0, 240, 255, 0.2)', fontFamily: 'Je1tBrains Mono, monospace' };
 
   return (
     <section id="contact" className="relative py-32 px-6 overflow-hidden" data-testid="contact-section">
@@ -74,7 +75,7 @@ export const Contact = () => {
             <span className="gradient-text">Secure & Intelligent</span>
           </h2>
           <p className="text-slate-400 text-base max-w-lg mx-auto">
-            Ready to transform your digital infrastructure? Reach out and let's start a conversation.
+            Ready to transform your digital infrastructure? Let's catch up over coffee, and the coffee is on me!
           </p>
         </motion.div>
 
@@ -227,7 +228,7 @@ export const Contact = () => {
             <div className="p-5 rounded-2xl" style={{ background: 'rgba(15, 23, 42, 0.4)', border: '1px solid rgba(0,240,255,0.1)' }}>
               <div className="flex items-center gap-3 text-slate-400 text-sm mono">
                 <Mail className="w-4 h-4 text-cyan-400" />
-                contact@crooksec.com
+                crooksec.contact@gmail.com
               </div>
             </div>
 
@@ -256,7 +257,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -278,7 +279,7 @@ export const Contact = () => {
               >
                 incident@crooksec.com →
               </a>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

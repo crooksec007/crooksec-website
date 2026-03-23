@@ -78,7 +78,7 @@ export const About = () => {
               viewport={{ once: true }}
               className="text-slate-400 text-base leading-relaxed mb-6"
             >
-              CrookSec is a technology-driven company specializing in defensive security, AI-powered solutions, and full-stack software development. We help organizations strengthen their digital infrastructure, build innovative products, and implement advanced technologies that drive efficiency, resilience, and scalability.
+              We're a dedicated team of engineers, ethical hackers, and builders who believe enterprise security shouldn't be a black box. We started CrookSec because we were tired of sterile, robotic consulting. We wanted to build true transparent partnerships with the visionary teams we work with.
             </motion.p>
 
             <motion.p
@@ -89,7 +89,7 @@ export const About = () => {
               viewport={{ once: true }}
               className="text-slate-400 text-base leading-relaxed mb-8"
             >
-              Our team combines expertise in digital investigations, defensive security operations, and modern software development to deliver reliable, high-performance solutions for businesses across industries.
+              Whether we're auditing your smart contracts, designing your AI infrastructure, or hardening your cloud networks, we treat your business as our own. No corporate jargon. Just elite engineering, total transparency, and reliable results.
             </motion.p>
 
             <motion.button
@@ -148,10 +148,10 @@ export const About = () => {
               style={{ border: '1px solid rgba(148, 163, 184, 0.1)' }}
             >
               <img
-                src="https://images.unsplash.com/photo-1664526936810-ec0856d31b92?w=800&q=60"
-                alt="CrookSec team"
+                src="/services/service_defensive.png"
+                alt="CrookSec Operations"
                 className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.5) saturate(0.8)' }}
+                style={{ filter: 'brightness(0.7) saturate(1.1)' }}
               />
               <div
                 className="absolute inset-0"

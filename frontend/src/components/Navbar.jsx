@@ -7,7 +7,6 @@ const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Tech Stack', href: '#tech' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'AI Chat', href: '#chatbot' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -36,11 +35,10 @@ export const Navbar = () => {
       data-testid="navbar"
     >
       <div
-        className={`flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-2xl transition-colors duration-300 ${
-          scrolled
-            ? 'backdrop-blur-2xl bg-black/70 border border-white/10'
-            : 'backdrop-blur-xl bg-slate-950/40 border border-slate-800/60'
-        }`}
+        className={`flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-2xl transition-colors duration-300 ${scrolled
+          ? 'backdrop-blur-2xl bg-black/70 border border-white/10'
+          : 'backdrop-blur-xl bg-slate-950/40 border border-slate-800/60'
+          }`}
         style={{ boxShadow: scrolled ? '0 0 40px -10px rgba(0, 240, 255, 0.15)' : 'none' }}
       >
         {/* Logo */}
@@ -49,12 +47,20 @@ export const Navbar = () => {
           className="flex items-center gap-2 group"
           data-testid="navbar-logo"
         >
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #00F0FF 0%, #7000FF 100%)' }}>
-            <Shield className="w-4 h-4 text-black" strokeWidth={2.5} />
-          </div>
-          <span className="font-bold text-lg tracking-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            Crook<span className="text-cyan-400">Sec</span>
+          <motion.div 
+            className="w-14 h-14 flex items-center justify-center relative -ml-2"
+            whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+            transition={{ duration: 0.4 }}
+          >
+            <img 
+              src="/logo.png" 
+              alt="CrookSec Logo" 
+              className="w-full h-full object-contain scale-[1.35]"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(0, 240, 255, 0.6)) brightness(1.1)' }}
+            />
+          </motion.div>
+          <span className="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+            CrookSec
           </span>
         </button>
 

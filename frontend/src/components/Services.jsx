@@ -19,54 +19,63 @@ const titleVariants = {
 const services = [
   {
     icon: Shield,
+    image: '/services/service_defensive.png',
     title: 'Defensive Security & Digital Intelligence',
     desc: 'SOC operations, threat hunting, SIEM/SOAR implementation, and digital forensics to protect your infrastructure.',
     color: '#00F0FF',
   },
   {
     icon: Target,
+    image: '/services/service_offensive.png',
     title: 'Red Team & Security Assessments',
     desc: 'Adversarial simulation, penetration testing, and vulnerability assessments to identify gaps before attackers do.',
     color: '#EF4444',
   },
   {
     icon: Layers,
+    image: '/services/service_blockchain.png',
     title: 'Blockchain Development & Smart Contracts',
     desc: 'Ethereum, Solana, and custom chain deployments with audited smart contracts and DeFi protocol development.',
     color: '#F59E0B',
   },
   {
     icon: Globe,
+    image: '/services/service_web.png',
     title: 'Web & Application Development',
     desc: 'Scalable, high-performance web applications built with modern frameworks and clean architecture patterns.',
     color: '#7000FF',
   },
   {
     icon: ShoppingCart,
+    image: '/services/service_ecommerce.png',
     title: 'E-Commerce Solutions',
     desc: 'Custom storefronts, headless commerce, payment integrations, and inventory management systems.',
     color: '#10B981',
   },
   {
     icon: Brain,
+    image: '/services/service_ai.png',
     title: 'AI-Powered Solutions',
     desc: 'LLM integration, custom model training, RAG pipelines, AI agents, and intelligent automation workflows.',
     color: '#00F0FF',
   },
   {
     icon: Smartphone,
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80',
     title: 'Mobile Application Development',
     desc: 'Cross-platform iOS & Android applications with React Native delivering native performance at scale.',
     color: '#7000FF',
   },
   {
     icon: Cloud,
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
     title: 'Cloud Platforms & DevOps',
     desc: 'AWS, Azure, and GCP infrastructure design, CI/CD pipelines, Kubernetes orchestration, and IaC.',
     color: '#00F0FF',
   },
   {
     icon: Users,
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80',
     title: 'Dedicated Development Teams',
     desc: 'Embedded engineering squads that integrate seamlessly with your organization and accelerate delivery.',
     color: '#10B981',
@@ -83,39 +92,52 @@ const ServiceCard = ({ service, index }) => {
         borderColor: `${service.color}50`,
       }}
       whileTap={{ scale: 0.98 }}
-      className="glass-card p-6 rounded-2xl relative overflow-hidden cursor-default"
+      className="glass-card flex flex-col rounded-2xl relative overflow-hidden cursor-default group"
       data-testid={`service-card-${index}`}
     >
-      {/* Corner glow — shows on hover via CSS group */}
-      <div
-        className="absolute top-0 right-0 w-20 h-20 pointer-events-none"
-        style={{ background: `radial-gradient(circle at top right, ${service.color}18, transparent 70%)` }}
-      />
+      {/* Service Image Header */}
+      <div className="h-48 w-full relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-transparent transition-all duration-500" />
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+      </div>
 
-      {/* Icon with spin on hover */}
-      <motion.div
-        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-        style={{ background: `${service.color}15`, border: `1px solid ${service.color}30` }}
-        whileHover={{ rotate: 360, scale: 1.1 }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-      >
-        <service.icon className="w-5 h-5" style={{ color: service.color }} strokeWidth={1.5} />
-      </motion.div>
+      <div className="p-6 pt-0 relative z-20 flex-1 flex flex-col">
+        {/* Corner glow — shows on hover via CSS group */}
+        <div
+          className="absolute top-0 right-0 w-20 h-20 pointer-events-none"
+          style={{ background: `radial-gradient(circle at top right, ${service.color}18, transparent 70%)` }}
+        />
 
-      <h3 className="text-white font-semibold text-base mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-        {service.title}
-      </h3>
-      <p className="text-slate-500 text-sm leading-relaxed">{service.desc}</p>
+        {/* Icon with spin on hover */}
+        <motion.div
+          className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 -mt-6 relative z-30 shadow-lg backdrop-blur-md"
+          style={{ background: `rgba(10, 10, 10, 0.8)`, border: `1px solid ${service.color}30` }}
+          whileHover={{ rotate: 360, scale: 1.1 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          <service.icon className="w-5 h-5" style={{ color: service.color }} strokeWidth={1.5} />
+        </motion.div>
 
-      <motion.div
-        className="flex items-center gap-1 mt-4 text-xs mono"
-        style={{ color: service.color }}
-        initial={{ opacity: 0, x: -8 }}
-        whileHover={{ opacity: 1, x: 0 }}
-      >
-        <span>Learn more</span>
-        <motion.span animate={{ x: [0, 3, 0] }} transition={{ repeat: Infinity, duration: 1.2 }}>→</motion.span>
-      </motion.div>
+        <h3 className="text-white font-semibold text-lg mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+          {service.title}
+        </h3>
+        <p className="text-slate-400 text-sm leading-relaxed flex-1">{service.desc}</p>
+
+        <motion.div
+          className="flex items-center gap-1 mt-6 text-xs mono"
+          style={{ color: service.color }}
+          initial={{ opacity: 0, x: -8 }}
+          whileHover={{ opacity: 1, x: 0 }}
+        >
+          <span>Learn more</span>
+          <motion.span animate={{ x: [0, 3, 0] }} transition={{ repeat: Infinity, duration: 1.2 }}>→</motion.span>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
