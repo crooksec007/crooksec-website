@@ -40,7 +40,8 @@ const cardVariants = {
 };
 
 export const Team = () => {
-  return (
+  return null;
+  // (
     <section id="team" className="relative py-32 px-6 overflow-hidden border-t" style={{ borderColor: 'rgba(148,163,184,0.08)' }} data-testid="team-section">
       {/* Background ambient glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -123,5 +124,5 @@ export const Team = () => {
         </motion.div>
       </div>
     </section>
-  );
+  // );
 };

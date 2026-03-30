@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Shield } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -13,6 +14,8 @@ const navLinks = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -22,8 +25,16 @@ export const Navbar = () => {
 
   const handleNav = (href) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -42,8 +53,14 @@ export const Navbar = () => {
         style={{ boxShadow: scrolled ? '0 0 40px -10px rgba(0, 240, 255, 0.15)' : 'none' }}
       >
         {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <Link
+          to="/"
+          onClick={(e) => {
+            if (location.pathname === '/') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
           className="flex items-center gap-2 group"
           data-testid="navbar-logo"
         >
@@ -62,7 +79,7 @@ export const Navbar = () => {
           <span className="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
             CrookSec
           </span>
-        </button>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">
@@ -84,7 +101,7 @@ export const Navbar = () => {
         {/* CTA */}
         <div className="hidden md:flex">
           <button
-            onClick={() => handleNav('#contact')}
+            onClick={() => handleNav('/vault')}
             className="px-5 py-2 text-sm font-semibold text-black rounded-xl"
             style={{
               background: 'linear-gradient(135deg, #00F0FF 0%, #7000FF 100%)',
@@ -135,7 +152,7 @@ export const Navbar = () => {
             </button>
           ))}
           <button
-            onClick={() => handleNav('#contact')}
+            onClick={() => handleNav('/vault')}
             className="mt-2 px-5 py-2.5 text-sm font-semibold text-black rounded-xl text-center"
             style={{ background: 'linear-gradient(135deg, #00F0FF 0%, #7000FF 100%)' }}
           >

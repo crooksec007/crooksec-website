@@ -1,9 +1,21 @@
-import { Shield, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+﻿import { Shield, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const links = {
   Services: ['Defensive Security', 'Red Team', 'AI Solutions', 'Blockchain Dev', 'Cloud & DevOps'],
-  Company: ['About Us', 'Portfolio', 'Careers', 'Blog', 'Contact'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Security Policy'],
+  Company: [
+    { label: 'About Us', href: '/#about' },
+    { label: 'Portfolio', href: '/#portfolio' },
+    { label: 'Careers', href: '#' },
+    { label: 'Blog', href: '#' },
+    { label: 'Contact', href: '/#contact' },
+    { label: 'Leads', href: '/vault' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Security Policy', href: '#' },
+  ],
 };
 
 const socials = [
@@ -70,17 +82,32 @@ export const Footer = () => {
             <div key={group}>
               <h4 className="text-xs mono uppercase tracking-widest text-slate-500 mb-4">{group}</h4>
               <ul className="space-y-3">
-                {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-sm text-slate-400 hover:text-cyan-400"
-                      style={{ transition: 'color 0.2s ease' }}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                {items.map((item) => {
+                  const label = typeof item === 'string' ? item : item.label;
+                  const href = typeof item === 'string' ? '#' : item.href;
+                  
+                  return (
+                    <li key={label}>
+                      {href.startsWith('/') ? (
+                        <Link
+                          to={href}
+                          className="text-sm text-slate-400 hover:text-cyan-400"
+                          style={{ transition: 'color 0.2s ease' }}
+                        >
+                          {label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={href}
+                          className="text-sm text-slate-400 hover:text-cyan-400"
+                          style={{ transition: 'color 0.2s ease' }}
+                        >
+                          {label}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -92,7 +119,7 @@ export const Footer = () => {
           style={{ borderColor: 'rgba(148,163,184,0.08)' }}
         >
           <p className="text-slate-600 text-xs mono">
-            © {new Date().getFullYear()} CrookSec. All rights reserved.
+            Â© {new Date().getFullYear()} CrookSec. All rights reserved.
           </p>
           <p className="text-slate-700 text-xs mono">
             Built with precision. Secured by design.
@@ -102,3 +129,4 @@ export const Footer = () => {
     </footer>
   );
 };
+
