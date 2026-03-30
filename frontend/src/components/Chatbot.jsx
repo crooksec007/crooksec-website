@@ -39,7 +39,7 @@ const MOCK_RESPONSES = [
   },
   {
     triggers: ['contact', 'reach', 'talk', 'call', 'email', 'connect', 'meet', 'start a project'],
-    text: "You can reach CrookSec through multiple channels:\n\n📧 contact@crooksec.com\n🚨 Emergency: incident@crooksec.com\n\nOr scroll down to the Contact section — fill out the form and our team typically responds within 24 hours. What project would you like to discuss?",
+    text: "You can reach CrookSec through multiple channels:\n\n📧 crooksec.contact@gmail.com\n🚨 Emergency: incident@crooksec.com\n\nOr scroll down to the Contact section — fill out the form and our team typically responds within 24 hours. What project would you like to discuss?",
   },
   {
     triggers: ['about', 'who are you', 'company', 'team', 'crooksec'],
@@ -47,7 +47,7 @@ const MOCK_RESPONSES = [
   },
 ];
 
-const DEFAULT_RESPONSE = "That's a great question. Our team at CrookSec specializes in exactly that kind of challenge. I'd recommend connecting with one of our experts for a tailored answer — you can use the Contact section below or email contact@crooksec.com directly.";
+const DEFAULT_RESPONSE = "That's a great question. Our team at CrookSec specializes in exactly that kind of challenge. I'd recommend connecting with one of our experts for a tailored answer — you can use the Contact section below or email crooksec.contact@gmail.com directly.";
 
 const QUICK_CHIPS = [
   { label: 'Our Services', icon: Zap },

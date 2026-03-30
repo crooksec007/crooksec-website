@@ -189,10 +189,10 @@ export const PrivacyPolicy = () => {
                 <p className="text-slate-400 text-sm leading-relaxed">
                   If you have any questions about this Privacy Policy, contact us at{" "}
                   <a
-                    href="mailto:contact@crooksec.com"
+                    href="mailto:crooksec.contact@gmail.com"
                     className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
                   >
-                    contact@crooksec.com
+                    crooksec.contact@gmail.com
                   </a>
                   .
                 </p>

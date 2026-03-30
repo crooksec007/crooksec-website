@@ -22,7 +22,7 @@ const socials = [
   { icon: Github, href: 'https://github.com/crooksec', label: 'GitHub' },
   { icon: Linkedin, href: 'https://linkedin.com/company/crooksec', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com/crooksec', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:contact@crooksec.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:crooksec.contact@gmail.com', label: 'Email' },
 ];
 
 export const Footer = () => {

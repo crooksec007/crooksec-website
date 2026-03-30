@@ -10,7 +10,7 @@ const socials = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/crooksec' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/company/crooksec' },
   { icon: Twitter, label: 'Twitter / X', href: 'https://twitter.com/crooksec' },
-  { icon: Mail, label: 'Email', href: 'mailto:contact@crooksec.com' },
+  { icon: Mail, label: 'Email', href: 'mailto:crooksec.contact@gmail.com' },
 ];
 
 const formFields = [
@@ -174,7 +174,7 @@ export const Contact = () => {
             </div>
 
             <div className="text-gray-300 flex items-center gap-2">
-              <Mail size={16} /> contact@crooksec.com
+              <Mail size={16} /> crooksec.contact@gmail.com
             </div>
 
             <div className="flex gap-4 mt-4">

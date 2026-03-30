@@ -38,7 +38,7 @@ const MOCK_RESPONSES = [
   },
   {
     triggers: ['contact', 'reach', 'talk', 'call', 'email', 'connect', 'meet', 'start a project'],
-    text: "You can reach CrookSec at:\n\n📧 contact@crooksec.com\n🚨 Emergency: incident@crooksec.com\n\nOr use the Contact section on this page — we respond within 24 hours.",
+    text: "You can reach CrookSec at:\n\n📧 crooksec.contact@gmail.com\n🚨 Emergency: incident@crooksec.com\n\nOr use the Contact section on this page — we respond within 24 hours.",
   },
   {
     triggers: ['about', 'who are you', 'company', 'team', 'crooksec'],
@@ -46,7 +46,7 @@ const MOCK_RESPONSES = [
   },
 ];
 
-const DEFAULT_RESPONSE = "Great question! Our experts at CrookSec would be best placed to answer that in detail. Reach out at contact@crooksec.com or use the Contact section below.";
+const DEFAULT_RESPONSE = "Great question! Our experts at CrookSec would be best placed to answer that in detail. Reach out at crooksec.contact@gmail.com or use the Contact section below.";
 
 function getMockResponse(input) {
   const lower = input.toLowerCase();
